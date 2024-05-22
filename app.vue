@@ -1,6 +1,11 @@
 <template>
   <div>
     <VitePwaManifest />
-    <NuxtLayout><NuxtPage /></NuxtLayout>
+    <Head>
+      <Title>Coding Quizzes</Title>
+    </Head>
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
   </div>
 </template>

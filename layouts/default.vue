@@ -1,8 +1,7 @@
 <template>
   <section>
-    <Header />
-    <slot />
-
-    <Footer />
+    <Navbar></Navbar>
+    <slot></slot>
+    <Footer></Footer>
   </section>
 </template>
