@@ -7,6 +7,7 @@ const isShowMenu = ref(false);
 <template>
   <div id="header">
     <nav
+      id="navbar"
       class="fixed z-10 flex w-full items-center justify-between bg-white p-4 shadow-md md:p-0 md:px-4"
     >
       <div class="flex items-center gap-2">
@@ -19,7 +20,7 @@ const isShowMenu = ref(false);
         <div class="group hidden md:block">
           <a href="#" class="inline-block px-4 py-5 text-lg">Categories</a>
           <div
-            class="absolute inset-0 left-[16rem] top-[4.5rem] h-max max-w-72 scale-0 rounded-md bg-white drop-shadow-xl transition duration-100 group-hover:scale-100"
+            class="absolute inset-0 left-[15rem] top-[4rem] h-max max-w-72 scale-0 rounded-md bg-white drop-shadow-xl transition duration-100 group-hover:scale-100"
           >
             <ul class="py-4">
               <li v-for="(item, index) in category" :key="index" class="">
