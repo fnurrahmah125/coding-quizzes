@@ -5,22 +5,22 @@ const isShowMenu = ref(false);
 </script>
 
 <template>
-  <div id="header">
+  <div id="header" class="bg-white shadow-md">
     <nav
       id="navbar"
-      class="fixed z-10 flex w-full items-center justify-between bg-white p-4 shadow-md md:p-0 md:px-4"
+      class="relative mx-auto flex max-w-[1900px] items-center justify-between p-4 md:p-0 md:px-4 lg:w-[90%]"
     >
       <div class="flex items-center gap-2">
-        <img src="/images/logo.png" class="h-10" />
-        <a
-          href="/"
+        <NuxtLink
+          to="/"
           class="border-gray-300 pr-5 text-xl font-semibold md:border-r"
-          >Coding Quizzes</a
+          ><img src="/images/logo.png" class="mr-2 inline-block h-10" />Coding
+          Quizzes</NuxtLink
         >
         <div class="group hidden md:block">
           <a href="#" class="inline-block px-4 py-5 text-lg">Categories</a>
           <div
-            class="absolute inset-0 left-[15rem] top-[4rem] h-max max-w-72 scale-0 rounded-md bg-white drop-shadow-xl transition duration-100 group-hover:scale-100"
+            class="absolute inset-0 left-[16rem] top-[4.28rem] z-10 h-[32rem] max-w-72 scale-0 overflow-y-auto rounded-b-md bg-white drop-shadow-xl transition duration-100 group-hover:scale-100"
           >
             <ul class="py-4">
               <li v-for="(item, index) in category" :key="index" class="">
@@ -35,10 +35,12 @@ const isShowMenu = ref(false);
       </div>
       <div class="hidden md:block">
         <NuxtLink
+          to="/login"
           class="cursor-pointer rounded-md border border-gray-400 px-5 py-2 text-lg transition duration-300 ease-out hover:bg-gray-100"
           >Login</NuxtLink
         >
         <NuxtLink
+          to="/register"
           class="ml-3 cursor-pointer rounded-md bg-red-800 px-5 py-2 text-lg text-white transition duration-300 ease-out hover:bg-red-900"
           >Register</NuxtLink
         >
@@ -56,18 +58,18 @@ const isShowMenu = ref(false);
 
     <div
       id="overlay-menu"
-      class="fixed inset-0 top-16 bg-[rgba(31,41,55,0.7)] transition duration-300 ease-in-out md:hidden"
+      class="fixed inset-0 top-16 z-30 bg-[rgba(31,41,55,0.7)] transition duration-300 ease-in-out md:hidden"
       :class="
         isShowMenu
-          ? '-translate-y-0'
-          : '-translate-y-[120%] bg-[rgba(31,41,55,0)]'
+          ? 'translate-x-0'
+          : 'translate-x-[120%] bg-[rgba(31,41,55,0)]'
       "
     ></div>
 
     <div
       v-if="isShowMenu"
       id="mobile-menu"
-      class="fixed bottom-4 left-4 right-4 top-[5.5rem] overflow-y-auto rounded-md bg-white px-4 py-4 md:hidden"
+      class="fixed bottom-4 left-4 right-4 top-[5.5rem] z-40 overflow-y-auto rounded-md bg-white px-4 py-4 md:hidden"
     >
       <h4 class="text-lg font-medium">Categories</h4>
       <ul class="mb-8 border-b py-4">
@@ -79,16 +81,20 @@ const isShowMenu = ref(false);
         </li>
       </ul>
 
-      <button
-        class="mb-4 block w-full rounded-md border border-gray-400 px-5 py-2 hover:bg-gray-100"
+      <NuxtLink
+        to="/login"
+        class="mb-4 block w-full rounded-md border border-gray-400 px-5 py-2 text-center hover:bg-gray-100"
+        @click="isShowMenu = !isShowMenu"
       >
         Login
-      </button>
-      <button
-        class="block w-full rounded-md border bg-red-800 px-5 py-2 text-white hover:bg-red-900"
+      </NuxtLink>
+      <NuxtLink
+        to="/register"
+        class="block w-full rounded-md border bg-red-800 px-5 py-2 text-center text-white hover:bg-red-900"
+        @click="isShowMenu = !isShowMenu"
       >
         Register
-      </button>
+      </NuxtLink>
     </div>
   </div>
 </template>

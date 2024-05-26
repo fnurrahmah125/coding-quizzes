@@ -1,7 +1,7 @@
 <template>
   <footer class="border-t border-gray-200 px-4">
     <div
-      class="md:gapy-y-0 mx-auto flex max-w-5xl flex-col items-center justify-between gap-y-4 py-5 text-gray-600 md:flex-row"
+      class="mx-auto flex max-w-[1900px] flex-col items-center justify-between gap-y-4 py-5 md:flex-row md:gap-y-0 lg:w-[90%]"
     >
       <div class="flex items-center gap-2">
         <img src="/images/logo.png" class="inline-block h-6" />
@@ -14,12 +14,12 @@
         <span class="mx-3">|</span>
         <a href="#">Privacy Policy</a>
       </div>
-      <div class="flex gap-1.5 text-lg">
-        <a href="#"><i class="ri-instagram-line"></i></a>
-        <a href="#"><i class="ri-twitter-x-line"></i></a>
-        <a href="#"><i class="ri-facebook-line"></i></a>
-        <a href="#"><i class="ri-linkedin-line"></i></a>
-        <a href="#"><i class="ri-github-line"></i></a>
+      <div class="flex gap-2">
+        <a href="#"><i class="ri-instagram-line text-lg"></i></a>
+        <a href="#"><i class="ri-twitter-x-line text-lg"></i></a>
+        <a href="#"><i class="ri-facebook-box-line text-xl"></i></a>
+        <a href="#"><i class="ri-linkedin-box-line text-xl"></i></a>
+        <a href="#"><i class="ri-github-fill text-xl"></i></a>
       </div>
     </div>
   </footer>

@@ -1,7 +1,7 @@
 <template>
-  <section>
+  <div>
     <Navbar></Navbar>
     <slot></slot>
     <Footer></Footer>
-  </section>
+  </div>
 </template>

@@ -37,6 +37,7 @@ export default defineNuxtConfig({
     cssPath: "~/assets/css/tailwind.css",
     configPath: "~/tailwind.config.ts",
   },
+  css: ["~/assets/css/main.css"],
   pwa: {
     manifest: {
       name: "Coding Quizzes",
