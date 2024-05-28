@@ -1,7 +1,11 @@
 <script setup lang="ts">
-import { category } from "~/composables/constants/category";
+import { useCategoriesStore } from "~/stores/categories";
 
 const isShowMenu = ref(false);
+const categoriesStore = useCategoriesStore();
+const { categories } = storeToRefs(categoriesStore);
+
+categoriesStore.getAllCategories();
 </script>
 
 <template>
@@ -23,10 +27,11 @@ const isShowMenu = ref(false);
             class="absolute inset-0 left-[16rem] top-[4.28rem] z-10 h-[32rem] max-w-72 scale-0 overflow-y-auto rounded-b-md bg-white drop-shadow-xl transition duration-100 group-hover:scale-100"
           >
             <ul class="py-4">
-              <li v-for="(item, index) in category" :key="index" class="">
+              <li v-for="category in categories" :key="category.id" class="">
                 <NuxtLink
+                  :to="`/category/${category.name}`"
                   class="block cursor-pointer px-6 py-2.5 text-lg font-light text-neutral-700 hover:bg-red-800 hover:text-white"
-                  >{{ item.name }}</NuxtLink
+                  >{{ category?.name }}</NuxtLink
                 >
               </li>
             </ul>
@@ -73,10 +78,10 @@ const isShowMenu = ref(false);
     >
       <h4 class="text-lg font-medium">Categories</h4>
       <ul class="mb-8 border-b py-4">
-        <li v-for="(item, index) in category" :key="index" class="">
+        <li v-for="category in categories" :key="category?.id" class="">
           <NuxtLink
             class="block cursor-pointer px-4 py-2.5 text-lg font-light text-neutral-700 hover:text-red-800"
-            >{{ item.name }}</NuxtLink
+            >{{ category?.name }}</NuxtLink
           >
         </li>
       </ul>
