@@ -100,11 +100,12 @@ import { stack } from "~/composables/constants/stack";
       <p class="mb-7 text-lg text-neutral-600 lg:text-xl">
         Join Coding Quizzes now and start your journey to becoming a coding pro!
       </p>
-      <button
+      <NuxtLink
+        to="/register"
         class="rounded-md bg-red-800 px-6 py-3 text-xl font-semibold text-white drop-shadow-md hover:bg-red-900"
       >
         Sign Up
-      </button>
+      </NuxtLink>
     </section>
   </div>
 </template>
